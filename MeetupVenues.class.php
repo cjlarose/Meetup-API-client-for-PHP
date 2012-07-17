@@ -23,7 +23,6 @@ class MeetupVenues extends MeetupApiRequest {
     public function getOpenVenues( $Parameters ) {
         $required_params = array ( 'city', 'country', 'lat', 'lon', 'state', 'text', 'zip' );
         $url = $this->buildUrl( MEETUP_ENDPOINT_OPEN_VENUES, $Parameters, $required_params );
-        echo $url;
         $response =  $this->get( $url )->getResponse();
         return $response['results'];
     }
@@ -39,7 +38,6 @@ class MeetupVenues extends MeetupApiRequest {
     public function getVenues( $Parameters ) {
         $required_params = array ( 'event_id', 'group_id', 'group_urlname', 'venue_id' );
         $url = $this->buildUrl( MEETUP_ENDPOINT_VENUES, $Parameters, $required_params );
-        echo $url;
         $response =  $this->get( $url )->getResponse();
         return $response['results'];
     }
